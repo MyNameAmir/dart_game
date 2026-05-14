@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart Target Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing-page" class="page active">
+    <div class="landing-container">
+      <div class="landing-content">
+        <h1 class="game-title">🎯 DART MASTER</h1>
+        <p class="game-subtitle">Test your precision and skill</p>
+        
+        <div class="landing-form">
+          <input 
+            type="text" 
+            id="playerName" 
+            placeholder="Enter your name" 
+            class="name-input"
+            maxlength="30"
+          >
+          <button id="startBtn" class="btn btn-primary">Start Game</button>
+        </div>
+
+        <div class="leaderboard-preview">
+          <h3>🏆 Top Scores</h3>
+          <div id="topScoresPreview" class="scores-list">
+            <p class="loading">Loading scores...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Page -->
+  <div id="game-page" class="page">
+    <div class="game-container">
+      <div class="game-header">
+        <div class="player-info">
+          <span class="player-name" id="currentPlayer"></span>
+        </div>
+        <div class="score-display">
+          <span class="score-label">Score:</span>
+          <span class="score-value" id="currentScore">0</span>
+        </div>
+      </div>
+
+      <div class="game-area" id="gameArea">
+        <!-- Target will be positioned here dynamically -->
+      </div>
+
+      <div class="game-stats">
+        <p id="hitCount">Shots: 0</p>
+        <p id="accuracy">Accuracy: 0%</p>
+        <p id="timer">Time: 0s</p>
+      </div>
+
+      <button id="endGameBtn" class="btn btn-secondary">End Game</button>
+    </div>
+  </div>
+
+  <!-- Results Page -->
+  <div id="results-page" class="page">
+    <div class="results-container">
+      <h1 class="results-title">🎉 Game Over!</h1>
+      
+      <div class="results-stats">
+        <div class="stat-item">
+          <span class="stat-label">Player</span>
+          <span class="stat-value" id="resultPlayer"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Final Score</span>
+          <span class="stat-value" id="resultScore"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Shots Fired</span>
+          <span class="stat-value" id="resultShots"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Accuracy</span>
+          <span class="stat-value" id="resultAccuracy"></span>
+        </div>
+      </div>
+
+      <div class="results-leaderboard">
+        <h3>🏆 Top 3 Scores</h3>
+        <div id="resultsTopScores" class="scores-list">
+          <p class="loading">Loading scores...</p>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+        <button id="backToLandingBtn" class="btn btn-secondary">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
